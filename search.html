@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Поиск</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <!--Навигация-->
+        <div class="navbar">
+            <a class="active" href="index.html" class="txt"><i class="fa fa-fw fa-home"></i> Главная</a>
+            <a href="search.html"><i class="fa fa-fw fa-search"></i> Поиск</a>
+            <a href="contact_us.html"><i class="fa fa-fw fa-envelope"></i> Связь с нами</a>
+            <a href="login.html"><i class="fa fa-fw fa-user"></i> Войти</a>
+        </div>
+        
+        <hr>
+        <br>
+        
+        <input class="input" type="text" id="search" onkeyup="funct()" placeholder="Поиск..." title="Напишите название игры">
+        
+        <br>
+        
+        
+        
+        <ul id="list">
+            <li><a href="#"><img src="pics/Chip_N_Dale_2.jpg"> </a></li>
+            <li><a href="#"><img src="pics/Zelda.jpg"?</a> </li>
+        </ul>
+        
+    </body>
+    
+    <script>
+        
+        function funct() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("search");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("list");
+            li = ul.getElementsByTagName("li");
+            
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+        
+    </script>
+    
+</html>
